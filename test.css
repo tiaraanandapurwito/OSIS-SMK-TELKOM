@@ -114,15 +114,19 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Sections Styling */
-#about, #events, #contact {
+/* Tentang Kami */
+.about-image-wrapper img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+#about {
   padding: 80px 0;
 }
 
-.section-title {
-  color: #333;
-  margin-bottom: 40px;
-  position: relative;
+.section-title h2 {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
 }
 
 .section-title::after {
@@ -130,10 +134,16 @@ body {
   position: absolute;
   bottom: -10px;
   left: 50%;
-  width: 100px;
+  width: 80px;
   height: 3px;
-  background-color: #4a4a4a;
+  /* background-color: #16a085; */
   transform: translateX(-50%);
+}
+
+.visi-misi .visi-card:hover, .visi-misi .misi-card:hover {
+  transform: translateY(-15px);
+  transition: 0.4s ease;
+  cursor: pointer;
 }
 
 /* Anggota dan Pembina*/
@@ -246,7 +256,6 @@ body {
 }
 
 #team .pembina-card .text-secondary::before {
-  /* content: '"'; */
   position: absolute;
   left: 0;
   top: -5px;
@@ -341,7 +350,6 @@ body {
   font-size: 2rem;
   color: white;
   cursor: pointer;
-  /* background: rgba(0, 0, 0, 0.5); */
   padding: 10px;
   border-radius: 50%;
   transition: transform 0.3s ease;
@@ -354,14 +362,14 @@ body {
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
-#loadMoreButton {
+#loadMoreButton, #seeLessButton {
   font-size: 1rem;
   font-weight: bold;
   padding: 10px 20px;
@@ -369,30 +377,28 @@ body {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#loadMoreButton:hover {
+#loadMoreButton:hover, #seeLessButton:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }
 
-
-/* Contact Form Styling */
-footer {
-  background: #343a40; /* Warna abu gelap */
-  color: #f8f9fa; /* Teks terang */
+/* Footer */
+footer ul li a:hover {
+  color: #ffc107;
+  text-decoration: underline;
 }
 
-footer a {
+footer a.text-light:hover {
+  color: #ffc107;
+}
+
+footer i {
   transition: color 0.3s ease;
 }
 
-footer a:hover {
-  color: #ffb703; /* Warna kuning saat di-hover */
+footer i:hover {
+  color: #16a085;
 }
-
-footer hr {
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
 
 /* Animations */
 .animate-fade-in {
@@ -426,94 +432,3 @@ footer hr {
   }
 }
 
-/* Tentang Kami Section */
-#about {
-  background-color: var(--bg-light);
-  padding: 6rem 0;
-  overflow: hidden;
-}
-
-#about .section-title {
-  position: relative;
-  margin-bottom: 3rem;
-}
-
-#about .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  width: 100px;
-  height: 4px;
-  background-color: var(--primary-color);
-  transform: translateX(-50%);
-}
-
-#about h2 {
-  font-size: 2.75rem;
-  color: var(--primary-color);
-  font-weight: 700;
-}
-
-#about .about-content {
-  background-color: white;
-  border-radius: 15px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-#about .about-content:hover {
-  transform: translateY(-10px);
-}
-
-#about img {
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-#about img:hover {
-  transform: scale(1.05);
-}
-
-#about .visi-misi {
-  display: flex;
-  gap: 2rem;
-}
-
-#about .visi-card,
-#about .misi-card {
-  flex: 1;
-  background-color: white;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-#about ul.visi-list,
-#about ul.misi-list {
-  padding-left: 0;
-  list-style-type: none;
-}
-
-#about ul.visi-list li,
-#about ul.misi-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
-}
-
-#about ul.visi-list li::before,
-#about ul.misi-list li::before {
-  content: '✔️';
-  margin-right: 1rem;
-  font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
-  #about .visi-misi {
-      flex-direction: column;
-  }
-}
